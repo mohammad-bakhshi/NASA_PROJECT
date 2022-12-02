@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const MONGODB_ULR = process.env.MONGO_URL;
+const MONGODB_URL = process.env.MONGO_URL;
 
 mongoose.connection.once('open', function () {
     console.log("MongoDB connection ready!");
@@ -11,7 +11,7 @@ mongoose.connection.on('error', function (err) {
 })
 
 async function mongoConnect() {
-    await mongoose.connect(MONGODB_ULR);
+    await mongoose.connect(MONGODB_URL);
 }
 
 async function mongoDisconnect() {
